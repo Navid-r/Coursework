@@ -163,6 +163,27 @@ public class Users{
             return "{\"error\": \"Server side error!\"}";
         }
     }
+    @GET
+    @Path("admin")
+    public String Admin() {
+        System.out.println("Invoked Users.Admin()");
+        JSONArray response = new JSONArray();
+        try {
+            PreparedStatement ps = Main.db.prepareStatement("SELECT UserID, Administrator FROM Users WHERE Administrator = 1");
+            ResultSet results = ps.executeQuery();
+            if (results.next()==true) {
+                JSONObject row = new JSONObject();
+                row.put("UserID", results.getInt(1));
+                row.put("Administrator", results.getBoolean(2));
+                response.add(row);
+            }
+            return response.toString();
+        } catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Unable to list items.  Error code xx.\"}";
+        }
+    }
+
 
 
 

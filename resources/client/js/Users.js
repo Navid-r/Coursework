@@ -57,9 +57,17 @@ function logout() {
         } else {
             Cookies.remove("Token", response.Token);    //UserName and Token are removed
             Cookies.remove("UserName", response.UserName);
-            window.open("index.html", "_self");       //open index.html in same tab
+            window.open("login.html", "_self");       //open index.html in same tab
         }
     });
 }
+function admin(){
+    debugger;
+    console.log("Invoked admin");
+    let url = "/users/admin";
+    window.open("admin.html", "_self");
+}
+
+
 
 

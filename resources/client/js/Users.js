@@ -24,7 +24,7 @@ function formatUsersList(myJSONArray){
     document.getElementById("UsersTable").innerHTML = dataHTML;
 }
 function UsersLogin() {
-    //debugger;
+    debugger;
     console.log("Invoked UsersLogin() ");
     let url = "/users/login";
     let formData = new FormData(document.getElementById('LoginForm'));
@@ -40,7 +40,13 @@ function UsersLogin() {
     } else {
         Cookies.set("Token", response.Token);
         Cookies.set("UserName", response.UserName);
-        window.open("index.html", "_self");       //open index.html in same tab
+        Cookies.set("Administrator", response.Administrator);
+        if(response.Administrator =="true"){
+            window.open("admin.html", "_self");       //open index.html in same tab
+        }else{
+            window.open("index.html", "_self");       //open index.html in same tab
+        }
+
     }
 });
 }
@@ -65,6 +71,7 @@ function admin(){
     debugger;
     console.log("Invoked admin");
     let url = "/users/admin";
+    Cookies.set("Administrator", response.Token)
     window.open("admin.html", "_self");
 
 }

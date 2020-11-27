@@ -124,9 +124,14 @@ public class Users{
                     ps2.setString(1, Token);
                     ps2.setString(2, UserName);
                     ps2.executeUpdate();
+                    PreparedStatement ps3 = Main.db.prepareStatement("SELECT Administrator FROM Users WHERE UserName =?");
+                    ps3.setString(1, UserName);
+                    ResultSet adminResults = ps3.executeQuery();
+                    String Administrator = adminResults.getString(1);
                     JSONObject userDetails = new JSONObject();
                     userDetails.put("UserName", UserName);
                     userDetails.put("Token", Token);
+                    userDetails.put("Administrator", Administrator);
                     return userDetails.toString();
                 } else {
                     return "{\"Error\": \"Incorrect password!\"}";
@@ -169,7 +174,7 @@ public class Users{
         System.out.println("Invoked Users.Admin()");
         JSONArray response = new JSONArray();
         try {
-            PreparedStatement ps = Main.db.prepareStatement("SELECT UserID, Administrator FROM Users WHERE Administrator = 1");
+            PreparedStatement ps = Main.db.prepareStatement("SELECT Administrator FROM Users WHERE  = ?");
             ResultSet results = ps.executeQuery();
             if (results.next()==true) {
                 JSONObject row = new JSONObject();

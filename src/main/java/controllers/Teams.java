@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 
 public class Teams {
     @GET
-    @Path("list")
+    @Path("Teamlist")
     public String TeamsList() {
         System.out.println("Invoked Teams.TeamsList()");
         JSONArray response = new JSONArray();

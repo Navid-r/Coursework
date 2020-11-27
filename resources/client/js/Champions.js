@@ -2,7 +2,7 @@
 function getChampionsList() {
     debugger;
     console.log("Invoked getChampionsList()");     //console.log your BFF for debugging client side - also use debugger statement
-    const url = "/champions/list/";    		// API method on web server will be in Champions class, method list
+    const url = "/champions/championslist/";    		// API method on web server will be in Champions class, method list
     fetch(url, {
         method: "GET",				//Get method
     }).then(response => {

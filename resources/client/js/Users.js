@@ -66,6 +66,7 @@ function admin(){
     console.log("Invoked admin");
     let url = "/users/admin";
     window.open("admin.html", "_self");
+
 }
 
 

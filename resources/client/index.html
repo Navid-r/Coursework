@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>The League Table</title>
-    <script src="/client/js/users.js"></script>
+    <script src="/client/js/Users.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script>
     <link rel="stylesheet" type="text/css" href="/client/css/styles.css">
 </head>
 <body>
-<button onclick='getUsersList();'>Run getUsersList</button>
-<table id="UsersTable"></table>
+<header>
+    <div class="navbar">
+        <img>
+        <nav>
+            <ul>
+            <li><a href="teams.html">Teams</a> </li>
+            <li><a href="pros.html">Pros</a> </li>
+            <li><a href="champions.html">Champions</a> </li>
+            <li><a href="items.html">Items</a> </li>
+            <li><a href="played.html">Played</a> </li>
+            <li><a href="pools.html">Pools</a> </li>
+            <li><a href="supporters.html">Supporters</a> </li>
+            <li><a href="matches.html">Matches</a> </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
 <br>
-<script src="/client/js/users.js"></script>
-<form id="userDetails">
-    User id: <input type="text" id="UserID">
-</form>
-<button onclick='getUser();'>Run getUser</button>
-<div id="DisplayOneUser"></div>
+<script src="/client/js/Users.js"></script>
 <br>
 
-<form id="InputUserDetails">
-    Username: <input type="text" name="UserName">
-    Password: <input type="text" name="PassWord">
-</form>
-<button onclick='add();'>Add User</button>
 <button onclick='logout()'>LOGOUT</button>
 <button onclick='admin();'>Admin Controls</button>
 

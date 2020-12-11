@@ -78,7 +78,7 @@ public class Users{
     }
     @POST
     @Path("update")
-    public String updateFood(@FormDataParam("UserID") Integer UserID, @FormDataParam("UserName") String UserName) {
+    public String UpdateUser(@FormDataParam("UserID") Integer UserID, @FormDataParam("UserName") String UserName) {
         try {
             System.out.println("Invoked Users.UpdateUsers/update UserID=" + UserID);
             PreparedStatement ps = Main.db.prepareStatement("UPDATE Users SET UserName = ? WHERE UserID = ?");

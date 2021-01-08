@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The League Table</title>
-    <script src="/client/js/Users.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script>
-    <link rel="stylesheet" type="text/css" href="/client/css/styles.css">
+    <title>The League Table</title> <!-- title of the page-->
+    <script src="/client/js/Users.js"></script><!-- Uses the Users.js script for its functions-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script><!-- connects to a host server-->
+    <link rel="stylesheet" type="text/css" href="/client/css/styles.css"><!-- link to stylesheet-->
 </head>
 <body>
 <header>
     <div class="navbar">
         <img>
-        <nav>
+        <nav> <!-- nav tag for navigation bar formatting via css-->
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li> <!-- links to the other pages-->
                 <li><a href="teams.html">Teams</a> </li>
                 <li><a href="pros.html">Pros</a> </li>
                 <li><a href="champions.html">Champions</a> </li>
@@ -27,10 +27,10 @@
 
     </div>
 </header>
-<button onclick='getUsersList();'>Run getUsersList</button>
-<table id="UsersTable"></table>
+<button onclick='getUsersList();'>Run getUsersList</button><!-- function from Users.js that are admin specific are located on this page-->
+<table id="UsersTable"></table> <!-- table for the getUsersList() function-->
 <br>
-<script src="/client/js/Users.js"></script>
+<script src="/client/js/Users.js"></script> <!-- the rest of the page is incomplete-->
 <form id="userDetails">
     User id: <input type="text" id="UserID">
 </form>

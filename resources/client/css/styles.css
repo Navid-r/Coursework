@@ -1,24 +1,24 @@
 nav {
-    float: right;
+    float: right; /* moves the navbar to the right side so it is out of the way of the sites main content */
 }
-nav ul {
+nav ul { /* formatting of the list for greater usability*/
     margin: 0;
     padding: 0;
     list-style: none;
 }
-nav li {
+nav li { /* formatting of each of the list items so that the user can differentiate between them bu having them in different margins relative to each other*/
     display: inline-block;
     margin-left: 50px;
     padding-top: 25px;
 
     position: relative;
 }
-nav a{
+nav a{     /*the text of the item in the navbar are in a black font relative to a lighter coloured background for usability as it would be easier to read*/
     colour: black;
     text-decoration: none;
     text-transform: uppercase;
 }
-nav a:hover {
+nav a:hover {   /*The next 3 nav a references are used for a dynamic navigation bar feature which has a visual cue for usability purposes for those that do not have good vision as this indicated further that the user's cursor is hovered over that specific item on the navigation bar*/
     colour: #101;
 }
 nav a:before {
@@ -26,7 +26,7 @@ nav a:before {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: #101;
+    background-color: yellow; /* I have used yellow here as it is the most recognisable colour to those who have poor eyesight*/
     position: absolute;
     top: 0;
     width: 0%;
@@ -36,17 +36,17 @@ nav a:before {
 nav a:hover::before {
     width: 100%;
 }
-header{
+header{  /* lighter coloured background with darker text for easier readability for users*/
     background: grey;
     height: 50px;
 }
-body{
+body{ /* background colour is similar to that identified in my GUI designs section during the design process*/
     margin: 0;
-    background: #ABCDEF;
+    background:  mediumpurple;
     font-family: "Work Sans", sans-serif;
     font-weight: 250;
 }
-.navbar {
+.navbar {         /* to make sure the navbar is in line with the top of the screen so that the site looks fluid and readable for all users*/
     width: 80%;
     margin: 0 auto;
 }

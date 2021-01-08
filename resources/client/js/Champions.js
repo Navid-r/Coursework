@@ -19,9 +19,9 @@ function getChampionsList() {
 
 
 function formatChampionsList(myJSONArray){
-    let dataHTML = "";
+    let dataHTML = "<tr><th>Index</th><th>Champion</th></tr>";
     for (let item of myJSONArray) {
-        dataHTML += "<tr><td>" + item.ChampionID + "<td><td>" + item.ChampionName + "<tr><td>";
+        dataHTML += "<tr>" + "<td>" + item.ChampionID + "</td>" + "<td>" + item.ChampionName + "</td>"  + "</tr>";
     }
     document.getElementById("ChampionsTable").innerHTML = dataHTML;
 }

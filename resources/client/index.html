@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:float="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>The League Table</title> <!-- title of the page-->
     <script src="/client/js/Users.js"></script> <!-- uses the Users.js script for functions-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script> <!-- connects to a host server-->
-    <link rel="stylesheet" type="text/css" href="/client/css/styles.css"> <!-- link to stylesheet-->
+    <script src="TwitchEmbed.js"></script> <!-- Load the Twitch embed script -->
+    <link rel="stylesheet" type="text/css" href="/client/css/styles.css"><!-- link to stylesheet-->
+    <style>
+        .videos {
+            width: 40%;
+            margin: 10%;
+            padding: 50px;
+
+
+        }
+    </style> <!-- formatting for the centre of the page applying to class videos-->
 </head>
 <body>
 <header>
@@ -23,9 +33,60 @@
                 <li><a href="matches.html">Matches</a> </li>
             </ul>
         </nav>
+    </div>
+    <div class ="videos"> <!--classifying the streams and vods under the videos class-->
+        <h2>VODs</h2>
+            <iframe width ="700" height="400" src ="https://youtube.com/embed/playlist?list=PLgWehX_D-K7v3evhlu_HXIoXXDG_CGTIi">
+            </iframe> <!-- youtube playlist linked with iframes in order to play vods-->
 
+        <h2>LCS</h2>
+        <div id="LCS"></div> <!--id of the LCS stream-->
+
+        <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+        <script type="text/javascript">
+            new Twitch.Embed("LCS", {
+                width: 854,
+                height: 480,
+                channel: "lcs",
+                 });
+        </script> <!--calls the twitch embed subroutine to embed the live stream at the given id with given width, height and channel names in order to format the stream on the website-->
+        <h2>LEC</h2>
+        <div id="LEC"></div> <!--id of the LEC stream-->
+
+        <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+        <script type="text/javascript">
+            new Twitch.Embed("LEC", {
+                width: 854,
+                height: 480,
+                channel: "lec",
+            });
+        </script><!--calls the twitch embed subroutine to embed the live stream at the given id with given width, height and channel names in order to format the stream on the website-->
+        <h2>LCK</h2>
+        <div id="LCK"></div> <!--id of the LCK stream-->
+
+        <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+        <script type="text/javascript">
+            new Twitch.Embed("LCK", {
+                width: 854,
+                height: 480,
+                channel: "lck",
+            });
+        </script> <!--calls the twitch embed subroutine to embed the live stream at the given id with given width, height and channel names in order to format the stream on the website-->
+        <h2>LPL</h2>
+        <div id="LPL"></div> <!--id of the LPL stream-->
+
+        <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+        <script type="text/javascript">
+            new Twitch.Embed("LPL", {
+                width: 854,
+                height: 480,
+                channel: "lpl",
+            });
+        </script> <!--calls the twitch embed subroutine to embed the live stream at the given id with given width, height and channel names in order to format the stream on the website-->
     </div>
 </header>
+<!-- Add a placeholder for the Twitch embed -->
+
 <br>
 <script src="/client/js/Users.js"></script>
 <br>

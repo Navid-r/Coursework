@@ -9,13 +9,18 @@
 </head>
 <body>
 <form id="LoginForm"> <!-- referenced in JS code for the login function in user.js-->
+    Username:
     <input type="text" name="UserName" id="UserName">
+    Password:
     <input type="password" name="PassWord" id="PassWord">
 </form>
 <button class="button" onclick='UsersLogin();'>LOGIN</button><!--UsersLogin()in users.js-->
 <form id="RegisterForm"> <!-- referenced in JS code for the account creation function in user.js-->
+    Username:
     <input  type="text" name="UserName" id="UserNameCA">
+    Password:
     <input  type="password" name="Password" id="PassWordCA">
+    Email:
     <input  type="text" name="Email" id="Email">
 </form>
 <button class ="button" onclick='postUsersAdd();'>Create Account</button><!--postUsersAdd()in users.js-->

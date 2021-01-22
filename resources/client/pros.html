@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="/client/js/Users.js"></script> <!-- uses the Users.js script for functions-->
+    <script src="/client/js/Pros.js"></script>  <!-- uses the Pros.js script for functions-->
     <link rel="stylesheet" type="text/css" href="/client/css/styles.css">
 </head>
 <body>
@@ -25,6 +27,18 @@
 
     </div>
 </header>
+<button style="float: left" onclick='getProsList();'>Run getProsList</button><!-- runs the getProList() function specified in pros.js-->
+<div style = 'float: right'>
+    <button onclick='valPros();'> Run getPros()</button>
+    <form id="ProsForm"> <!-- referenced in JS code for the getPro() function in pros.js-->
+        In Game Name:
+        <input type="text" name="ProName" id="ProName"> <!-- data for the form-->
+    </form>
+    <table id="ProTable"></table>
+</div>
+<table id="ProsTable"></table>
+<br>
+<br>
 
 </body>
 </html>

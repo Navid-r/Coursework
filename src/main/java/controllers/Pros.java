@@ -12,14 +12,14 @@ import java.sql.ResultSet;
 @Consumes(MediaType.MULTIPART_FORM_DATA)
 @Produces(MediaType.APPLICATION_JSON)
 
-public class Pros {
+public class Pros { //class called Pros for each of the Java classes for the Pros functions for modularity
     @GET
-    @Path("proslist")
-    public String prosList() {
-        System.out.println("Invoked Pros.ProsList()");
+    @Path("proslist") //API path in order to communicate with JS
+    public String prosList() {  //prosList class for listing all of the pro data
+        System.out.println("Invoked Pros.ProsList()");  //invokes for debugging
         JSONArray response = new JSONArray();
         try {
-            PreparedStatement ps = Main.db.prepareStatement("SELECT ProName, Position, AverageKills, AverageDeaths, AverageAssists, KDA FROM Pros");
+            PreparedStatement ps = Main.db.prepareStatement("SELECT ProName, Position, AverageKills, AverageDeaths, AverageAssists, KDA FROM Pros"); //prepare statement to fetch
             ResultSet results = ps.executeQuery();
             while (results.next() == true) {
                 JSONObject row = new JSONObject();
@@ -28,12 +28,12 @@ public class Pros {
                 row.put("AverageKills", results.getFloat(3));
                 row.put("AverageDeaths", results.getFloat(4));
                 row.put("AverageAssists", results.getFloat(5));
-                row.put("KDA", results.getFloat(6));
-                response.add(row);
+                row.put("KDA", results.getFloat(6)); //JSON object is created from each of the selected parts from the table
+                response.add(row);  //
             }
-            return response.toString();
+            return response.toString(); //return to JS as a string for formatting purposes in JS
         } catch (Exception exception) {
-            System.out.println("Database error: " + exception.getMessage());
+            System.out.println("Database error: " + exception.getMessage()); //error message for debugging
             return "{\"Error\": \"Unable to list items.  Error code xx.\"}";
         }
     }

@@ -2,30 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The League Table</title>
-    <style>
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-
-        tr:nth-child(odd) {
-            background-color: white;
-        }
-
-    </style>
-    <script src="/client/js/Champions.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script>
-    <link rel="stylesheet" type="text/css" href="/client/css/styles.css">
+    <title>Title</title>
+    <script src="/client/js/Users.js"></script> <!-- uses the Users.js script for functions-->
+    <script src="/client/js/Champions.js"></script>  <!-- uses the Champions.js script for functions-->
+    <link rel="stylesheet" type="text/css" href="/client/css/styles.css"> <!--link to the style sheet for the styling of the navigation bar and page backgrounds-->
 </head>
 <body>
 <header>
-    <div class="navbar">
+    <div class="navbar"> <!-- class for the navbar for styling and formatting-->
         <img>
         <nav>
             <ul>
@@ -37,19 +21,24 @@
                 <li><a href="played.html">Played</a> </li>
                 <li><a href="pools.html">Pools</a> </li>
                 <li><a href="supporters.html">Supporters</a> </li>
-                <li><a href="matches.html">Matches</a> </li>
-            </ul>
+            </ul> <!-- links for each of the pages in the navbar-->
         </nav>
 
     </div>
 </header>
-<button onclick='getChampionsList();'>Run getChampionsList</button>
-<table id="ChampionsTable"></table>
+<h1>Champions</h1>
+<button style="float: left" onclick='getChampionsList();'>Run getChampionsList</button><!-- runs the getChampionsList() function specified in Champions.js-->
+<div style = 'float: right'>
+    <button onclick='valChampions();'> Run getChampion()</button>
+    <form id="ChampionForm"> <!-- referenced in JS code for the getChampion() function in Champions.js-->
+        Champion Name:
+        <input type="text" name="ChampionName" id="ChampionName"> <!-- data for the form-->
+    </form>
+    <table id="championTable"></table>  <!-- ids for the tables for JS referencing-->
+</div>
+<table id="championsTable"></table> <!-- ids for the tables for JS referencing-->
 <br>
-<script src="/client/js/Champions.js"></script>
 <br>
-
-<button onclick='logout()'>LOGOUT</button>
 
 </body>
 </html>

@@ -50,3 +50,16 @@ body{ /* background colour is similar to that identified in my GUI designs secti
     width: 80%;
     margin: 0 auto;
 }
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: white; /* styling for the tables*/
+}
